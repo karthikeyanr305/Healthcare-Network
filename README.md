@@ -206,6 +206,8 @@ All the above information outline what the project is in detail. Now, let me exp
 
 <img src="./process_flow.png">
 
+### Accidents happen!
+
 When an accident happens, the first step from an application point of view would be for the first responder to insert the
 details of the accident to the application. From an application perspective, to make the process simpler, the person would just
 have to click a button. Which would then capture the location information automatically and make an entry in the database. The backend sql query would be -
@@ -309,6 +311,8 @@ WHERE
 <img src="./query1.png">
 
 
+### Patient @ Hospital
+
 Lets assume the patient is admitted and all her details are entered. For simplicity, those queries are not shown here. But after
 insertion, if anyone wants to view the records, the following query would give the details.
 
@@ -340,7 +344,9 @@ WHERE
 <img src="./query2.png">
 
 
-For the next scenario, if the patient wants an organ which is not available in the hospital he/she is in, then the nearest hospital
+### No Organ!
+
+For the next scenario, if the patient wants an organ that is not available in the hospital he/she is in, then the nearest hospital
 with that organ needs to be searched for.
 
 ```sql
@@ -397,6 +403,7 @@ WHERE distance_rank = 1;
 
 <img src="./query3.png">
 
+### Update Organ Availability
 
 The organ availability is updated once the organ is procured from the nearby hospital.
 
@@ -412,6 +419,7 @@ WHERE
 
 ```
 
+### We have Blood!
 
 In the next scenario, if there is need for blood, to check the availability of blood in the current hospital, the following query
 is used.
@@ -451,17 +459,6 @@ WHERE
 
 <img src="./query4.png">
 
-
-Finally, this data is updated in the database
-
-
-```sql
-
-DELETE FROM Accidents 
-WHERE accident_id = 'A-10000001';
-
-
-```
 
 <br> 
 
