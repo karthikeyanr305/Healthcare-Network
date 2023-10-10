@@ -1,5 +1,5 @@
-# Road Accident Analysis
-========================
+# Road Accident Analysis <br><br>
+
 
 
 ## Implementation
@@ -66,140 +66,126 @@ Accidents data is sourced from [1] where out of the 47 columns, 10 columns which
 -----------
 
 <ol>
-    <li> ** zipcodeDetails **
-        <ol>
-            <li> zipcode : CHAR(11) - zipcode of the location </li>
-            <li> state : VARCHAR(30) - State of the location </li>
-            <li> city : VARCHAR(30) - City of the location </li>
-            <li> County : VARCHAR(30) - County of the location </li>
-        </ol>
-    </li>
-
-    <li> **accidents**
-        <ol>
-            <li>accident id : CHAR(11) - Uniquely identifies each accident</li>
-            <li>severity : INTEGER - Describes the severity of the injury, varies from 1-4 (1 being lowest, and 4 being the highest)</li>
-            <li>time : TIMESTAMP - Time at which the accident occurred.</li>
-            <li>latitude: FLOAT - latitude of the location at which the accident occurred</li>
-            <li>longitude: FLOAT - longitude of the location at which the accident occurred</li>
-            <li>Street: VARCHAR(100) - Street in which the incident took place</li>
-            <li>Side: CHAR(1) - Identifies which side of the road(L/R)</li>
-        </ol>
-    </li>
-
-    <li>**hospitalDetails**
-        <ol>
-            <li>hospital id: CHAR(15) - Uniquely identifies each hospital</li>
-            <li>hospital name: VARCHAR(100) - Name of the hospital</li>
-            <li>Address: VARCHAR(100) - Address of the hospital</li>
-            <li>Zipcode: CHAR(11) - zipcode of the hospital</li>
-            <li>Telephone: CHAR(15) - contact number of the hospital</li>
-            <li>Beds available: INTEGER - Number of available beds</li>
-            <li>Helipad: Char(1) - Whether the hospital owns a helipad(Y/N)</li>
-        </ol>
-    </li>
-
-    <li>**hospitalLocation**
-        <ol>
-            <li>Hospital id: CHAR(15) - Uniquely identifies each hospital</li>
-            <li>Latitude: FLOAT - latitude of the location at which the hospital is located</li>
-            <li>Longitude: FLOAT - latitude of the location at which the hospital is located</li>
-        </ol>
-    </li>
-
-    <li>**accidentHospital**
-        <ol>
-            <li>Accident id: CHAR(11) - Uniquely identifies each accident</li>
-            <li>Hospital id: CHAR(15) - Uniquely identifies each hospital</li>
-            <li>Distance: FLOAT - Distance between the closest hospital and the accident location</li>
-        </ol>
-    </li>
-
-    <li>**bloodGroup**
-        <ol>
-            <li>blood group id: CHAR(1) - Uniquely identifies each blood group.</li>
-            <li>blood group : VARCHAR(3) - Blood group of the donor or the blood group required.</li>
-        </ol>
-    </li>
-
-    <li>**bloodAvailability**
-        <ol>
-            <li>blood group id: CHAR(1) - Uniquely identifies each blood group.</li>
-            <li>hospital id: CHAR(15) - Uniquely identifies each hospital</li>
-            <li>quantity: FLOAT - Quantity of blood required</li>
-        </ol>
-    </li>
-
-    <li>**donor**
-        <ol>
-            <li>donor id: CHAR(10) - Uniquely identifies each donor.</li>
-            <li>name: VARCHAR(30) - Name of the donor</li>
-            <li>age: INTEGER - Age of the donor</li>
-            <li>sex: CHAR(1) - Gender of the donor (M/F)</li>
-            <li>address: VARCHAR(100) - Address of the donor</li>
-            <li>phone: CHAR(10) - contact number of the donor</li>
-            <li>zipcode: CHAR(11) - zipcode of the donor’s house</li>
-        </ol>
-    </li>
-
-    <li>**organ**
-        <ol>
-            <li>organ id: CHAR(2) - Uniquely identifies each organ.</li>
-            <li>organ: VARCHAR(20) - Name of the organ that the donor is donating</li>
-        </ol>
-    </li>
-
-    <li>**organAvailability**
-        <ol>
-            <li>organ id: CHAR(2) - Uniquely identifies each organ.</li>
-            <li>hospital id: CHAR(15) - Uniquely identifies each hospital</li>
-        </ol>
-    </li>
-
-    <li>**organDonor**
-        <ol>
-            <li>organ id: CHAR(2) - Uniquely identifies each organ.</li>
-            <li>donor id: CHAR(10) - Uniquely identifies each donor.</li>
-        </ol>
-    </li>
-
-    <li>**patientDetails**
-        <ol>
-            <li>patient id: CHAR(10) - Uniquely identifies each patient</li>
-            <li>name: VARCHAR(30) - Name of the donor</li>
-            <li>age: INTEGER - Age of the donor</li>
-            <li>sex: CHAR(1) - Gender of the donor (M/F)</li>
-            <li>address: VARCHAR(100) - Address of the donor</li>
-            <li>phone: CHAR(10) - contact number of the donor</li>
-            <li>blood group: VARCHAR(3) - blood group of the patient</li>
-        </ol>
-    </li>
-
-    <li>**patientAccident**
-        <ol>
-            <li>patient id: CHAR(10) - Uniquely identifies each patient accident</li>
-            <li>accident id: CHAR(11) - Uniquely identifies each accident</li>
-            <li>hospital id: CHAR(15) - Uniquely identifies each hospital location</li>
-        </ol>
-    </li>
-
-    <li>**patientBlood**
-        <ol>
-            <li>patient id: CHAR(10) - Uniquely identifies each patient</li>
-            <li>accident id: CHAR(11) - Uniquely identifies each accident</li>
-            <li>blood group id: CHAR(1) - Uniquely identifies each blood group.</li>
-            <li>quantity: FLOAT - Quantity of blood required</li>
-        </ol>
-    </li>
-
-    <li>**patientOrgan**
-        <ol>
-            <li>patient id: CHAR(10) - Uniquely identifies each patient</li>
-            <li>accident id: CHAR(11) - Uniquely identifies each accident</li>
-            <li>organ id: CHAR(2) - Uniquely identifies each organ.</li>
-            <li>quantity: INTEGER - Quantity of organs required</li>
-        </ol>
-    </li>
+	<li>  zipcodeDetails
+		<ol>
+			<li>  zipcode : CHAR(11) - zipcode of the location  </li> 
+			<li>  state : VARCHAR(30) - State of the location  </li> 
+			<li>  city : VARCHAR(30) - City of the location  </li> 
+			<li>  County : VARCHAR(30) - County of the location  </li> 
+		</ol>
+	</li> 
+	<li>  accidents
+		<ol>
+			<li>  accident id : CHAR(11) - Uniquely identifies each accident  </li> 
+			<li>  severity : INTEGER - Describes the severity of the injury, varies from 1-4 (1 being lowest, and 4 being the highest)  </li> 
+			<li>  time : TIMESTAMP - Time at which the accident occurred.  </li> 
+			<li>  latitude: FLOAT - latitude of the location at which the accident occurred  </li> 
+			<li>  longitude: FLOAT - longitude of the location at which the accident occurred  </li> 
+			<li>  Street: VARCHAR(100) - Street in which the incident took place  </li> 
+			<li>  Side: CHAR(1) - Identifies which side of the road(L/R)  </li> 
+		</ol>
+	</li> 
+	<li>  hospitalDetails
+		<ol>
+			<li>  hospital id: CHAR(15) - Uniquely identifies each hospital  </li> 
+			<li>  hospital name: VARCHAR(100) - Name of the hospital  </li> 
+			<li>  Address: VARCHAR(100) - Address of the hospital  </li> 
+			<li>  Zipcode: CHAR(11) - zipcode of the hospital  </li> 
+			<li>  Telephone: CHAR(15) - contact number of the hospital  </li> 
+			<li>  Beds available: INTEGER - Number of available beds  </li> 
+			<li>  Helipad: Char(1) - Whether the hospital owns a helipad(Y/N)  </li> 
+		</ol>
+	</li> 		
+	<li> **hospitalLocation**
+		<ol>
+			<li> Hospital id: CHAR(15) - Uniquely identifies each hospital </li> 
+			<li> Latitude: FLOAT - latitude of the location at which the hospital is located </li> 
+			<li> Longitude: FLOAT - latitude of the location at which the hospital is located </li> 
+		</ol>
+	</li> 
+	<li> **accidentHospital**
+		<ol>
+			<li> Accident id: CHAR(11) - Uniquely identifies each accident </li> 
+			<li> Hospital id: CHAR(15) - Uniquely identifies each hospital </li> 
+			<li> Distance: FLOAT - Distance between the closest hospital and the accident location </li> 
+		</ol>
+	</li> 
+	<li> **bloodGroup**
+		<ol>
+			<li> blood group id: CHAR(1) - Uniquely identifies each blood group. </li> 
+			<li> blood group : VARCHAR(3) - Blood group of the donor or the blood group required. </li> 
+		</ol>
+	</li> 
+	<li> **bloodAvailability**
+		<ol>
+			<li> blood group id: CHAR(1) - Uniquely identifies each blood group. </li> 
+			<li> hospital id: CHAR(15) - Uniquely identifies each hospital </li> 
+			<li> quantity: FLOAT - Quantity of blood required </li> 
+		</ol>
+	</li> 
+	<li> **donor**
+		<ol>
+			<li> donor id: CHAR(10) - Uniquely identifies each donor. </li> 
+			<li> name: VARCHAR(30) - Name of the donor </li> 
+			<li> age: INTEGER - Age of the donor </li> 
+			<li> sex: CHAR(1) - Gender of the donor (M/F) </li> 
+			<li> address: VARCHAR(100) - Address of the donor </li> 
+			<li> phone: CHAR(10) - contact number of the donor </li> 
+			<li> zipcode: CHAR(11) - zipcode of the donor’s house </li> 
+		</ol>
+	</li> 
+	<li> **organ**
+		<ol>
+			<li> organ id: CHAR(2) - Uniquely identifies each organ. </li> 
+			<li> organ: VARCHAR(20) - Name of the organ that the donor is donating </li> 
+		</ol>
+	</li> 
+	<li> **organAvailability**
+		<ol>
+			<li> organ id: CHAR(2) - Uniquely identifies each organ. </li> 
+			<li> hospital id: CHAR(15) - Uniquely identifies each hospital </li> 
+		</ol>
+	</li> 
+	<li> **organDonor**
+		<ol>
+			<li> organ id: CHAR(2) - Uniquely identifies each organ. </li> 
+			<li> donor id: CHAR(10) - Uniquely identifies each donor. </li> 
+		</ol>
+	</li> 
+	<li> **patientDetails**
+		<ol>
+			<li> patient id: CHAR(10) - Uniquely identifies each patient </li> 
+			<li> name: VARCHAR(30) - Name of the donor </li> 
+			<li> age: INTEGER - Age of the donor </li> 
+			<li> sex: CHAR(1) - Gender of the donor (M/F) </li> 
+			<li> address: VARCHAR(100) - Address of the donor </li> 
+			<li> phone: CHAR(10) - contact number of the donor </li> 
+			<li> blood group: VARCHAR(3) - blood group of the patient </li> 
+		</ol>
+	</li> 
+	<li> patientAccident
+		<ol>
+			<li> patient id: CHAR(10) - Uniquely identifies each patient accident </li> 
+			<li> accident id: CHAR(11) - Uniquely identifies each accident </li> 
+			<li> hospital id: CHAR(15) - Uniquely identifies each hospital location </li> 
+		</ol>
+	</li> 
+	<li> patientBlood
+		<ol>
+			<li> patient id: CHAR(10) - Uniquely identifies each patient </li> 
+			<li> accident id: CHAR(11) - Uniquely identifies each accident </li> 
+			<li> blood group id: CHAR(1) - Uniquely identifies each blood group. </li> 
+			<li> quantity: FLOAT - Quantity of blood required </li> 
+		</ol>
+	</li> 
+	<li> patientOrgan
+		<ol>
+			<li> patient id: CHAR(10) - Uniquely identifies each patient </li> 
+			<li> accident id: CHAR(11) - Uniquely identifies each accident </li> 
+			<li> organ id: CHAR(2) - Uniquely identifies each organ. </li> 
+			<li> quantity: INTEGER - Quantity of organs required </li> 
+		</ol>
+	</li> 
 </ol>
 
 
