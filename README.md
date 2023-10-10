@@ -15,13 +15,13 @@ Steps for running the project
 4. Populate accidenthospital relation and patient relation using populate_patient.py
 
 
-##DESCRIPTION
+## DESCRIPTION
 --------------
 
 When an accident happens, giving prompt care to the patient is of the uttmost importance. If information regarding hospital locations, resources available at that hospital is all captured in a global repository, then seamless care can be given to a patient. For instance, if blood is not available in a hospital, but we have repository where we have captured data from other hospitals as well, then blood can be procured from the nearest hospital. Using this project, we envision a product which can act as an intermediary in doing the same.
 
 
-##INTRODUCTION
+## INTRODUCTION
 --------------
 Injuries caused by road accidents range from minor to life-threatening. Every minute in these times can be seen as valuable in saving a life. In order to help injured people in accidents promptly, we have designed a database that helps them get admitted to the nearest hospital and get the required quantity of blood and organs if needed. We require the use of a database instead of an excel file for the following reasons:
 
@@ -33,7 +33,7 @@ Injuries caused by road accidents range from minor to life-threatening. Every mi
 • We can make use of triggers for live updates as our use-case would benefit a lot from live updates.
 
 
-##TARGET USERS
+## TARGET USERS
 --------------
 
 **911 operators** are usually the first point of contact when an accident occurs. They would need to know where the accident took place, the intensity of the accident which injured people to send to which hospital, the location of the nearest available hospital, and details of the hospital like the number of beds available and whether they have the right resources and infrastructure to handle the treatments. Having these details would help them make the right decision to coordinate with the first responders and the hospitals with the limited time they have at hand.
