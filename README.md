@@ -66,7 +66,7 @@ Accidents data is sourced from [1] where out of the 47 columns, 10 columns which
 -----------
 
 <ol>
-	<li>  zipcodeDetails
+	<li>  #### zipcodeDetails
 		<ol>
 			<li>  zipcode : CHAR(11) - zipcode of the location  </li> 
 			<li>  state : VARCHAR(30) - State of the location  </li> 
@@ -201,7 +201,7 @@ The following table represents the realationship between the Relations, Primary 
 <img src="./primary_foreign_keys.png">
 
 
-##SCENARIO BASED EXPLANATION
+## SCENARIO BASED EXPLANATION
 
 All the above information outline what the project is in detail. Now, let me explain what the project can do with different case scenarios. 
 
