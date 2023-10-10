@@ -9,10 +9,12 @@ Hospital dataset downloaded from https://www.kaggle.com/datasets/andrewmvd/us-ho
 
 <br>
 Steps for running the project:
-1. Run sql file project_ddl.sql for creating the relations
-2. Run the python script initial_populate_table.py for populating data from datasets
-3. Run the sql file distanceFunction.sql for creating a function
-4. Populate accidenthospital relation and patient relation using populate_patient.py
+<ol>
+	<li> Run sql file project_ddl.sql for creating the relations </li>
+	<li> Run the python script initial_populate_table.py for populating data from datasets </li>
+	<li> Run the sql file distanceFunction.sql for creating a function </li>
+	<li> Populate accidenthospital relation and patient relation using populate_patient.py </li>
+</ol>
 
 <br>
 
@@ -27,12 +29,12 @@ When an accident happens, giving prompt care to the patient is of the uttmost im
 
 Injuries caused by road accidents range from minor to life-threatening. Every minute in these times can be seen as valuable in saving a life. In order to help injured people in accidents promptly, we have designed a database that helps them get admitted to the nearest hospital and get the required quantity of blood and organs if needed. We require the use of a database instead of an excel file for the following reasons:
 
-• To handle and store a high volume of data and large files about each relation.
-• To express better relationships among the attributes of data.
-• New information pertaining to different relations can be added efficiently without redundant data.
-• To ensure better accessibility by providing authorization and restriction among users.
-• To increase the accessibility of data in terms of updating, searching, and retrieving.
-• We can make use of triggers for live updates as our use-case would benefit a lot from live updates.
+* To handle and store a high volume of data and large files about each relation.
+* To express better relationships among the attributes of data.
+* New information pertaining to different relations can be added efficiently without redundant data.
+* To ensure better accessibility by providing authorization and restriction among users.
+* To increase the accessibility of data in terms of updating, searching, and retrieving.
+* We can make use of triggers for live updates as our use-case would benefit a lot from live updates.
 
 
 <br> 
