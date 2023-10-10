@@ -3,7 +3,6 @@
 
 
 ## Implementation
------------------
 
 Accident dataset downloaded from https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents
 Hospital dataset downloaded from https://www.kaggle.com/datasets/andrewmvd/us-hospital-locations
@@ -16,13 +15,12 @@ Steps for running the project
 
 
 ## DESCRIPTION
---------------
 
 When an accident happens, giving prompt care to the patient is of the uttmost importance. If information regarding hospital locations, resources available at that hospital is all captured in a global repository, then seamless care can be given to a patient. For instance, if blood is not available in a hospital, but we have repository where we have captured data from other hospitals as well, then blood can be procured from the nearest hospital. Using this project, we envision a product which can act as an intermediary in doing the same.
 
 
 ## INTRODUCTION
---------------
+
 Injuries caused by road accidents range from minor to life-threatening. Every minute in these times can be seen as valuable in saving a life. In order to help injured people in accidents promptly, we have designed a database that helps them get admitted to the nearest hospital and get the required quantity of blood and organs if needed. We require the use of a database instead of an excel file for the following reasons:
 
 • To handle and store a high volume of data and large files about each relation.
@@ -33,8 +31,8 @@ Injuries caused by road accidents range from minor to life-threatening. Every mi
 • We can make use of triggers for live updates as our use-case would benefit a lot from live updates.
 
 
+
 ## TARGET USERS
---------------
 
 **911 operators** are usually the first point of contact when an accident occurs. They would need to know where the accident took place, the intensity of the accident which injured people to send to which hospital, the location of the nearest available hospital, and details of the hospital like the number of beds available and whether they have the right resources and infrastructure to handle the treatments. Having these details would help them make the right decision to coordinate with the first responders and the hospitals with the limited time they have at hand.
 
@@ -44,9 +42,7 @@ The **emergency unit of the hospital management** would also be required to be n
 
 
 
-
 ## DATABASE IMPLEMENTATION
--------------------------
 
 Why this database?
 
@@ -55,7 +51,7 @@ Keeping the emergency unit well informed with the live updates so that they can 
 Storing patient history to provide seamless care.
 Centralised directory of blood and organs
 
-Accidents data is sourced from [1] where out of the 47 columns, 10 columns which were specific to location information is used. Accidents dataset was extensively used for road accident prediction, to study the road conditions etc. In this paper, we have deviated away from the usual applications to combine it with hospital to find the nearest hospital. From the repository, 10k records were sourced for the final implementation. From the hospital dataset [2], 8 columns were extracted out of 34 columns. Both hospitals and accidents data is sourced from US. For patient and donor details, fabricated data using faker module. This data was then randonly combined with blood and organ details using a script. For blood data, 8 common blood types were used and for organ data 6 common organs were used.
+In the [accidents data](https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents) out of 47 columns, 10 columns which were specific to location information is used. Accidents dataset was extensively used for road accident prediction, to study the road conditions etc. In this paper, we have deviated away from the usual applications to combine it with hospital to find the nearest hospital. From the repository, 10k records were sourced for the final implementation. From the [hospital dataset](https://www.kaggle.com/datasets/andrewmvd/us-hospital-locations), 8 columns were extracted out of 34 columns. Both hospitals and accidents data is sourced from US. For patient and donor details, fabricated data using faker module. This data was then randomly combined with blood and organ details using a script. For blood data, 8 common blood types were used and for organ data 6 common organs were used.
 
 <img src="./initial_desc.png">
 
@@ -63,10 +59,9 @@ Accidents data is sourced from [1] where out of the 47 columns, 10 columns which
 
 
 ## RELATIONS
------------
 
 <ol>
-	<li>  #### zipcodeDetails
+	<li>  zipcodeDetails
 		<ol>
 			<li>  zipcode : CHAR(11) - zipcode of the location  </li> 
 			<li>  state : VARCHAR(30) - State of the location  </li> 
@@ -96,14 +91,14 @@ Accidents data is sourced from [1] where out of the 47 columns, 10 columns which
 			<li>  Helipad: Char(1) - Whether the hospital owns a helipad(Y/N)  </li> 
 		</ol>
 	</li> 		
-	<li> **hospitalLocation**
+	<li> hospitalLocation
 		<ol>
 			<li> Hospital id: CHAR(15) - Uniquely identifies each hospital </li> 
 			<li> Latitude: FLOAT - latitude of the location at which the hospital is located </li> 
 			<li> Longitude: FLOAT - latitude of the location at which the hospital is located </li> 
 		</ol>
 	</li> 
-	<li> **accidentHospital**
+	<li> accidentHospital
 		<ol>
 			<li> Accident id: CHAR(11) - Uniquely identifies each accident </li> 
 			<li> Hospital id: CHAR(15) - Uniquely identifies each hospital </li> 
@@ -116,14 +111,14 @@ Accidents data is sourced from [1] where out of the 47 columns, 10 columns which
 			<li> blood group : VARCHAR(3) - Blood group of the donor or the blood group required. </li> 
 		</ol>
 	</li> 
-	<li> **bloodAvailability**
+	<li> bloodAvailability
 		<ol>
 			<li> blood group id: CHAR(1) - Uniquely identifies each blood group. </li> 
 			<li> hospital id: CHAR(15) - Uniquely identifies each hospital </li> 
 			<li> quantity: FLOAT - Quantity of blood required </li> 
 		</ol>
 	</li> 
-	<li> **donor**
+	<li> donor
 		<ol>
 			<li> donor id: CHAR(10) - Uniquely identifies each donor. </li> 
 			<li> name: VARCHAR(30) - Name of the donor </li> 
@@ -134,25 +129,25 @@ Accidents data is sourced from [1] where out of the 47 columns, 10 columns which
 			<li> zipcode: CHAR(11) - zipcode of the donor’s house </li> 
 		</ol>
 	</li> 
-	<li> **organ**
+	<li> organ
 		<ol>
 			<li> organ id: CHAR(2) - Uniquely identifies each organ. </li> 
 			<li> organ: VARCHAR(20) - Name of the organ that the donor is donating </li> 
 		</ol>
 	</li> 
-	<li> **organAvailability**
+	<li> organAvailability
 		<ol>
 			<li> organ id: CHAR(2) - Uniquely identifies each organ. </li> 
 			<li> hospital id: CHAR(15) - Uniquely identifies each hospital </li> 
 		</ol>
 	</li> 
-	<li> **organDonor**
+	<li> organDonor
 		<ol>
 			<li> organ id: CHAR(2) - Uniquely identifies each organ. </li> 
 			<li> donor id: CHAR(10) - Uniquely identifies each donor. </li> 
 		</ol>
 	</li> 
-	<li> **patientDetails**
+	<li> patientDetails
 		<ol>
 			<li> patient id: CHAR(10) - Uniquely identifies each patient </li> 
 			<li> name: VARCHAR(30) - Name of the donor </li> 
