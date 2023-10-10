@@ -45,7 +45,7 @@ The **emergency unit of the hospital management** would also be required to be n
 
 
 
-##DATABASE IMPLEMENTATION
+## DATABASE IMPLEMENTATION
 -------------------------
 
 Why this database?
@@ -62,20 +62,20 @@ Accidents data is sourced from [1] where out of the 47 columns, 10 columns which
 
 
 
-##RELATIONS
+## RELATIONS
 -----------
 
 <ol>
-    <li>**zipcodeDetails**
+    <li> ** zipcodeDetails **
         <ol>
-            <li>zipcode : CHAR(11) - zipcode of the location</li>
-            <li>state : VARCHAR(30) - State of the location</li>
-            <li>city : VARCHAR(30) - City of the location</li>
-            <li>County : VARCHAR(30) - County of the location</li>
+            <li> zipcode : CHAR(11) - zipcode of the location </li>
+            <li> state : VARCHAR(30) - State of the location </li>
+            <li> city : VARCHAR(30) - City of the location </li>
+            <li> County : VARCHAR(30) - County of the location </li>
         </ol>
     </li>
 
-    <li>**accidents**
+    <li> **accidents**
         <ol>
             <li>accident id : CHAR(11) - Uniquely identifies each accident</li>
             <li>severity : INTEGER - Describes the severity of the injury, varies from 1-4 (1 being lowest, and 4 being the highest)</li>
@@ -477,7 +477,7 @@ WHERE accident_id = 'A-10000001';
 ```
 
 
-##FUTURE SCOPE
+## FUTURE SCOPE
 --------------
 
 An application layer can be build on top of this database. Taking in account the fact that the first responder may not have time to enter all the location details manually, the location info needs to be calculated on the press of a button and the accident details should be recorded without any other input. For calculating the distance, haversine formula was used which would give the displacement between two points. In future, an actual google map route can be used to give accurate distance by road as well as looking at the traffic data for finding the nearest hospital. Also, currently only the distance is used to make the decision for choosing a hospital, it can be extended to include whether the hospital has enough beds available and factor in other variables as well.
