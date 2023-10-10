@@ -14,12 +14,12 @@ Steps for running the project
 4. Populate accidenthospital relation and patient relation using populate_patient.py
 
 
-## DESCRIPTION
+<br> ## DESCRIPTION
 
 When an accident happens, giving prompt care to the patient is of the uttmost importance. If information regarding hospital locations, resources available at that hospital is all captured in a global repository, then seamless care can be given to a patient. For instance, if blood is not available in a hospital, but we have repository where we have captured data from other hospitals as well, then blood can be procured from the nearest hospital. Using this project, we envision a product which can act as an intermediary in doing the same.
 
 
-## INTRODUCTION
+<br> ## INTRODUCTION
 
 Injuries caused by road accidents range from minor to life-threatening. Every minute in these times can be seen as valuable in saving a life. In order to help injured people in accidents promptly, we have designed a database that helps them get admitted to the nearest hospital and get the required quantity of blood and organs if needed. We require the use of a database instead of an excel file for the following reasons:
 
@@ -32,7 +32,7 @@ Injuries caused by road accidents range from minor to life-threatening. Every mi
 
 
 
-## TARGET USERS
+<br> ## TARGET USERS
 
 **911 operators** are usually the first point of contact when an accident occurs. They would need to know where the accident took place, the intensity of the accident which injured people to send to which hospital, the location of the nearest available hospital, and details of the hospital like the number of beds available and whether they have the right resources and infrastructure to handle the treatments. Having these details would help them make the right decision to coordinate with the first responders and the hospitals with the limited time they have at hand.
 
@@ -42,7 +42,7 @@ The **emergency unit of the hospital management** would also be required to be n
 
 
 
-## DATABASE IMPLEMENTATION
+<br> ## DATABASE IMPLEMENTATION
 
 Why this database?
 
@@ -53,12 +53,10 @@ Centralised directory of blood and organs
 
 In the [accidents data](https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents) out of 47 columns, 10 columns which were specific to location information is used. Accidents dataset was extensively used for road accident prediction, to study the road conditions etc. In this paper, we have deviated away from the usual applications to combine it with hospital to find the nearest hospital. From the repository, 10k records were sourced for the final implementation. From the [hospital dataset](https://www.kaggle.com/datasets/andrewmvd/us-hospital-locations), 8 columns were extracted out of 34 columns. Both hospitals and accidents data is sourced from US. For patient and donor details, fabricated data using faker module. This data was then randomly combined with blood and organ details using a script. For blood data, 8 common blood types were used and for organ data 6 common organs were used.
 
-<img src="./initial_desc.png">
 
 
 
-
-## RELATIONS
+<br> ## RELATIONS
 
 <ol>
 	<li>  zipcodeDetails
@@ -196,9 +194,11 @@ The following table represents the realationship between the Relations, Primary 
 <img src="./primary_foreign_keys.png">
 
 
-## SCENARIO BASED EXPLANATION
+<br> ## SCENARIO BASED EXPLANATION
 
 All the above information outline what the project is in detail. Now, let me explain what the project can do with different case scenarios. 
+
+<img src="./process_flow">
 
 When an accident happens, the first step from an application point of view would be for the first responder to insert the
 details of the accident to the application. From an application perspective, to make the process simpler, the person would just
@@ -458,7 +458,7 @@ WHERE accident_id = 'A-10000001';
 ```
 
 
-## FUTURE SCOPE
+<br> ## FUTURE SCOPE
 --------------
 
 An application layer can be build on top of this database. Taking in account the fact that the first responder may not have time to enter all the location details manually, the location info needs to be calculated on the press of a button and the accident details should be recorded without any other input. For calculating the distance, haversine formula was used which would give the displacement between two points. In future, an actual google map route can be used to give accurate distance by road as well as looking at the traffic data for finding the nearest hospital. Also, currently only the distance is used to make the decision for choosing a hospital, it can be extended to include whether the hospital has enough beds available and factor in other variables as well.
