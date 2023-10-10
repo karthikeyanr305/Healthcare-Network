@@ -4,7 +4,8 @@
 
 ## Implementation
 
-Accident dataset downloaded from https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents <br>
+Accident dataset downloaded from https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents   
+
 Hospital dataset downloaded from https://www.kaggle.com/datasets/andrewmvd/us-hospital-locations
 
 Steps for running the project
